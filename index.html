@@ -626,7 +626,7 @@
     margin-top:0;
   }
   .toc-part{
-    margin-top:36px;
+    margin-top:28px;
   }
   .toc-part-header{
     display:flex;
@@ -634,7 +634,7 @@
     align-items:baseline;
     border-bottom:1px solid var(--line-strong);
     padding-bottom:8px;
-    margin-bottom:14px;
+    margin-bottom:8px;
   }
   .toc-part-title{
     font-family:"Fraunces", Georgia, serif;
@@ -657,83 +657,64 @@
     padding:0;
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:4px;
   }
-  .toc-card{
+  .toc-item{
     background:var(--card);
     border:1px solid var(--line);
     transition:border-color .15s ease, background-color .15s ease;
   }
-  .toc-card:hover{
+  .toc-item:hover{
     border-color:var(--accent-native);
   }
   .toc-link{
-    display:grid;
-    grid-template-columns:84px 1fr;
-    gap:18px;
-    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:9px 16px;
     text-decoration:none;
     color:inherit;
-    align-items:baseline;
-  }
-  @media (max-width:560px){
-    .toc-link{
-      grid-template-columns:1fr;
-      gap:6px;
-      padding:14px 16px;
-    }
   }
   .toc-num{
     font-family:"JetBrains Mono", monospace;
     font-size:11.5px;
-    letter-spacing:.08em;
+    letter-spacing:.06em;
     text-transform:uppercase;
     color:var(--ink-faint);
     font-weight:600;
+    min-width:56px;
+    flex-shrink:0;
   }
-  .toc-card:hover .toc-num{
+  .toc-item:hover .toc-num{
     color:var(--accent-native);
-  }
-  .toc-body{
-    display:flex;
-    flex-direction:column;
-    gap:5px;
   }
   .toc-title{
     font-family:"Fraunces", Georgia, serif;
-    font-size:1.12rem;
-    font-weight:600;
+    font-size:1.05rem;
+    font-weight:500;
     line-height:1.3;
     color:var(--ink);
     letter-spacing:-.01em;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    flex-grow:1;
   }
-  .toc-card:hover .toc-title{
+  .toc-item:hover .toc-title{
     color:var(--accent-native);
   }
-  .toc-title .arrow{
+  .toc-link .arrow{
     font-family:"JetBrains Mono", monospace;
     font-size:13px;
     color:var(--ink-faint);
     opacity:0;
     transition:opacity .15s ease, transform .15s ease;
     transform:translateX(-4px);
+    flex-shrink:0;
   }
-  .toc-card:hover .toc-title .arrow{
+  .toc-item:hover .arrow{
     opacity:1;
     transform:translateX(0);
     color:var(--accent-native);
   }
-  .toc-desc{
-    font-family:"Source Serif 4", Georgia, serif;
-    font-size:13.5px;
-    line-height:1.5;
-    color:var(--ink-soft);
-    margin:0;
-  }
-</style>
+  </style>
 
 <div class="series-bar">
   <span>Nutrition &amp; Physical Degeneration &middot; Weston A. Price, 1939</span>
@@ -741,13 +722,12 @@
 
 <div class="wrap">
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc" class="active"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc" class="active"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <section class="toc-section" id="toc">
     <div class="hero">
       <div class="eyebrow">Overview</div>
       <h1>Table of Contents</h1>
-      <p class="dek">Weston A. Price&rsquo;s 1939 global field study &mdash; examining the dental health, facial architecture, and nutrition of isolated primitive peoples versus modernised groups across 21 chapters.</p>
     </div>
 
     <nav class="toc-nav" aria-label="Table of Contents">
@@ -757,31 +737,25 @@
           <span class="toc-part-meta">Intro &ndash; Ch 02</span>
         </div>
         <ol class="toc-list">
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#intro-hero" class="toc-link">
               <span class="toc-num">Intro</span>
-              <div class="toc-body">
-                <span class="toc-title">Introduction <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Price outlines his research methodology: seeking living controls free of disease among isolated primitive racial stocks before the introduction of modern commerce.</p>
-              </div>
+              <span class="toc-title">Introduction</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch1-hero" class="toc-link">
               <span class="toc-num">Ch 01</span>
-              <div class="toc-body">
-                <span class="toc-title">Why Seek Wisdom from Primitive Peoples <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">The scientific rationale for examining primitive groups as Nature's controlled experiment, urging readers to observe the evidence firsthand.</p>
-              </div>
+              <span class="toc-title">Why Seek Wisdom from Primitive Peoples</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch2-hero" class="toc-link">
               <span class="toc-num">Ch 02</span>
-              <div class="toc-body">
-                <span class="toc-title">The Progressive Decline of Modern Civilization <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">A survey of findings from leading medical authorities and anthropologists documenting physical decline across modern nations.</p>
-              </div>
+              <span class="toc-title">The Progressive Decline of Modern Civilization</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
         </ol>
@@ -792,112 +766,88 @@
           <span class="toc-part-meta">Ch 03 &ndash; Ch 14</span>
         </div>
         <ol class="toc-list">
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch3-hero" class="toc-link">
               <span class="toc-num">Ch 03</span>
-              <div class="toc-body">
-                <span class="toc-title">Isolated &amp; Modernized Swiss <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Fieldwork across Alpine valleys (L&ouml;tschental, Grachen, Visperterminen, Ayer): near-zero decay on rye and raw dairy versus rampant cavities in modernised resorts.</p>
-              </div>
+              <span class="toc-title">Isolated &amp; Modernized Swiss</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch4-hero" class="toc-link">
               <span class="toc-num">Ch 04</span>
-              <div class="toc-body">
-                <span class="toc-title">Isolated &amp; Modernized Gaelics <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Crofters and fisherfolk of the Outer Hebrides living on oats, fish, and shellfish compared with the white bread and sweetened tea of the port of Stornoway.</p>
-              </div>
+              <span class="toc-title">Isolated &amp; Modernized Gaelics</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch5-hero" class="toc-link">
               <span class="toc-num">Ch 05</span>
-              <div class="toc-body">
-                <span class="toc-title">Isolated &amp; Modernized Eskimos <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Surveys by air across Alaska showing exceptional dental and physical perfection on traditional diets versus rapid breakdown at government trade stations.</p>
-              </div>
+              <span class="toc-title">Isolated &amp; Modernized Eskimos</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch6-hero" class="toc-link">
               <span class="toc-num">Ch 06</span>
-              <div class="toc-body">
-                <span class="toc-title">Primitive &amp; Modernized North American Indians <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Following native tribes across North America, from sub-Arctic nomadic hunters to the Florida Everglades, tracking the immediate disruption caused by commercial foods.</p>
-              </div>
+              <span class="toc-title">Primitive &amp; Modernized North American Indians</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch7-hero" class="toc-link">
               <span class="toc-num">Ch 07</span>
-              <div class="toc-body">
-                <span class="toc-title">Isolated &amp; Modernized Melanesians <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Field studies across New Caledonia, Fiji, and the Solomon Islands examining coastal sea-gatherers and inland agriculturalists.</p>
-              </div>
+              <span class="toc-title">Isolated &amp; Modernized Melanesians</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch8-hero" class="toc-link">
               <span class="toc-num">Ch 08</span>
-              <div class="toc-body">
-                <span class="toc-title">Isolated &amp; Modernized Polynesians <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Investigations across eight South Pacific archipelagos, where copra trading ships introduced modern flour and sugar, transforming facial form in a single generation.</p>
-              </div>
+              <span class="toc-title">Isolated &amp; Modernized Polynesians</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch9-hero" class="toc-link">
               <span class="toc-num">Ch 09</span>
-              <div class="toc-body">
-                <span class="toc-title">Isolated &amp; Modernized African Tribes <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">A 4,000-mile journey from the Kenyan coast to the Upper Nile and Congo, examining cattle-herding, hunting, and agricultural tribal groups.</p>
-              </div>
+              <span class="toc-title">Isolated &amp; Modernized African Tribes</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch10-hero" class="toc-link">
               <span class="toc-num">Ch 10</span>
-              <div class="toc-body">
-                <span class="toc-title">Isolated &amp; Modernized Australian Aborigines <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Studies across government reservations contrasting elders reared on native game and wild seeds with reservation generations fed on white flour and sugar.</p>
-              </div>
+              <span class="toc-title">Isolated &amp; Modernized Australian Aborigines</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch11-hero" class="toc-link">
               <span class="toc-num">Ch 11</span>
-              <div class="toc-body">
-                <span class="toc-title">Isolated &amp; Modernized Torres Strait Islanders <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Island-by-island records showing dental decay tracking the exact history and availability of government-operated trading posts.</p>
-              </div>
+              <span class="toc-title">Isolated &amp; Modernized Torres Strait Islanders</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch12-hero" class="toc-link">
               <span class="toc-num">Ch 12</span>
-              <div class="toc-body">
-                <span class="toc-title">Isolated &amp; Modernized New Zealand Maori <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Contrasting pre-European skull baselines with modernised Maori communities after decades on imported white rations.</p>
-              </div>
+              <span class="toc-title">Isolated &amp; Modernized New Zealand Maori</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch13-hero" class="toc-link">
               <span class="toc-num">Ch 13</span>
-              <div class="toc-body">
-                <span class="toc-title">Ancient Civilizations of Peru <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Analysis of pre-Columbian burial sites and trepanned skulls along Peru's desert coast, establishing the historic absence of dental and skeletal deformities.</p>
-              </div>
+              <span class="toc-title">Ancient Civilizations of Peru</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch14-hero" class="toc-link">
               <span class="toc-num">Ch 14</span>
-              <div class="toc-body">
-                <span class="toc-title">Isolated &amp; Modernized Peruvian Indians <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">High-altitude Quechua terrace farmers in the Andes and Amazon basin tribes compared with modernised coastal communities.</p>
-              </div>
+              <span class="toc-title">Isolated &amp; Modernized Peruvian Indians</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
         </ol>
@@ -908,67 +858,53 @@
           <span class="toc-part-meta">Ch 15 &ndash; Ch 21</span>
         </div>
         <ol class="toc-list">
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch15-hero" class="toc-link">
               <span class="toc-num">Ch 15</span>
-              <div class="toc-body">
-                <span class="toc-title">Characteristics of Primitive and Modernized Dietaries <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Quantitative laboratory comparisons demonstrating that primitive diets supplied several times more minerals and fat-soluble activators than modern foods.</p>
-              </div>
+              <span class="toc-title">Characteristics of Primitive and Modernized Dietaries</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch16-hero" class="toc-link">
               <span class="toc-num">Ch 16</span>
-              <div class="toc-body">
-                <span class="toc-title">Primitive Control of Dental Caries <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Clinical trials applying primitive nutritional principles to arrest active caries and reinforce tooth structure in American children.</p>
-              </div>
+              <span class="toc-title">Primitive Control of Dental Caries</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch17-hero" class="toc-link">
               <span class="toc-num">Ch 17</span>
-              <div class="toc-body">
-                <span class="toc-title">One Origin of Physical Deformities <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Refuting the racial-crossing theory by showing that narrowing of dental arches and facial bones occurs directly from parental nutritional injury.</p>
-              </div>
+              <span class="toc-title">One Origin of Physical Deformities</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch18-hero" class="toc-link">
               <span class="toc-num">Ch 18</span>
-              <div class="toc-body">
-                <span class="toc-title">Prenatal Nutritional Deformities and Disease Types <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Animal reproduction studies isolating specific vitamin deficiencies before conception and during gestation as causes of structural deformities.</p>
-              </div>
+              <span class="toc-title">Prenatal Nutritional Deformities and Disease Types</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch19-hero" class="toc-link">
               <span class="toc-num">Ch 19</span>
-              <div class="toc-body">
-                <span class="toc-title">Physical, Mental and Moral Deterioration <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Examining the systemic relationship between abnormal cranial development, endocrine disturbances, and moral or antisocial behaviour.</p>
-              </div>
+              <span class="toc-title">Physical, Mental and Moral Deterioration</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch20-hero" class="toc-link">
               <span class="toc-num">Ch 20</span>
-              <div class="toc-body">
-                <span class="toc-title">Soil Depletion and Plant and Animal Deterioration <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">Tracing the health of humans and livestock back to the mineral fertility of agricultural soil, warning against chronic soil exhaustion.</p>
-              </div>
+              <span class="toc-title">Soil Depletion and Plant and Animal Deterioration</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
-          <li class="toc-card">
+          <li class="toc-item">
             <a href="#ch21-hero" class="toc-link">
               <span class="toc-num">Ch 21</span>
-              <div class="toc-body">
-                <span class="toc-title">Practical Application of Primitive Wisdom <span class="arrow">&rarr;</span></span>
-                <p class="toc-desc">A closing programme of dietary recommendations for prospective parents, expectant mothers, and growing children based on primitive food traditions.</p>
-              </div>
+              <span class="toc-title">Practical Application of Primitive Wisdom</span>
+              <span class="arrow">&rarr;</span>
             </a>
           </li>
         </ol>
@@ -978,7 +914,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero" class="active"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero" class="active"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="intro-hero">
     <div class="eyebrow">Introduction</div>
@@ -1032,7 +968,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero" class="active"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero" class="active"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch1-hero">
     <div class="eyebrow">Chapter One</div>
@@ -1098,7 +1034,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero" class="active"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero" class="active"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch2-hero">
     <div class="eyebrow">Chapter Two</div>
@@ -1153,7 +1089,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero" class="active"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero" class="active"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch3-hero">
     <div class="eyebrow">Chapter Three</div>
@@ -1383,7 +1319,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero" class="active"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero" class="active"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch4-hero">
     <div class="eyebrow">Chapter Four</div>
@@ -1605,7 +1541,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero" class="active"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero" class="active"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch5-hero">
     <div class="eyebrow">Chapter Five</div>
@@ -1917,7 +1853,7 @@
   </section>
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero" class="active"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero" class="active"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch6-hero">
     <div class="eyebrow">Chapter Six</div>
@@ -2243,7 +2179,7 @@
   </section>
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero" class="active"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero" class="active"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch7-hero">
     <div class="eyebrow">Chapter Seven</div>
@@ -2439,7 +2375,7 @@
   </section>
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero" class="active"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero" class="active"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch8-hero">
     <div class="eyebrow">Chapter Eight</div>
@@ -2674,7 +2610,7 @@
     </div>
   </section>
   <div class="chapter-divider"></div>
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero" class="active"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero" class="active"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch9-hero">
     <div class="eyebrow">Chapter Nine</div>
@@ -2954,7 +2890,7 @@
   </section>
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero" class="active"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero" class="active"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch10-hero">
     <div class="eyebrow">Chapter Ten</div>
@@ -3209,7 +3145,7 @@
   </section>
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero" class="active"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero" class="active"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch11-hero">
     <div class="eyebrow">Chapter Eleven</div>
@@ -3449,7 +3385,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero" class="active"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero" class="active"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch12-hero">
     <div class="eyebrow">Chapter Twelve</div>
@@ -3694,7 +3630,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero" class="active"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero" class="active"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch13-hero">
     <div class="eyebrow">Chapter Thirteen</div>
@@ -3937,7 +3873,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero" class="active"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero" class="active"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch14-hero">
     <div class="eyebrow">Chapter Fourteen</div>
@@ -4166,7 +4102,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero" class="active"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero" class="active"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch15-hero">
     <div class="eyebrow">Chapter Fifteen</div>
@@ -4337,7 +4273,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero" class="active"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero" class="active"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch16-hero">
     <div class="eyebrow">Chapter Sixteen</div>
@@ -4474,7 +4410,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero" class="active"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero" class="active"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch17-hero">
     <div class="eyebrow">Chapter Seventeen</div>
@@ -4567,7 +4503,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero" class="active"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero" class="active"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch18-hero">
     <div class="eyebrow">Chapter Eighteen</div>
@@ -4712,7 +4648,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero" class="active"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero" class="active"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch19-hero">
     <div class="eyebrow">Chapter Nineteen</div>
@@ -4841,7 +4777,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero" class="active"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero" class="active"><b>20</b></a><a href="#ch21-hero"><b>21</b></a></span></div>
 
   <div class="hero" id="ch20-hero">
     <div class="eyebrow">Chapter Twenty</div>
@@ -4896,7 +4832,7 @@
 
   <div class="chapter-divider"></div>
 
-  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>TOC</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero" class="active"><b>21</b></a></span></div>
+  <div class="chapter-nav"><span class="series-nav"><a href="#toc"><b>Contents</b></a><a href="#intro-hero"><b>Intro</b></a><a href="#ch1-hero"><b>01</b></a><a href="#ch2-hero"><b>02</b></a><a href="#ch3-hero"><b>03</b></a><a href="#ch4-hero"><b>04</b></a><a href="#ch5-hero"><b>05</b></a><a href="#ch6-hero"><b>06</b></a><a href="#ch7-hero"><b>07</b></a><a href="#ch8-hero"><b>08</b></a><a href="#ch9-hero"><b>09</b></a><a href="#ch10-hero"><b>10</b></a><a href="#ch11-hero"><b>11</b></a><a href="#ch12-hero"><b>12</b></a><a href="#ch13-hero"><b>13</b></a><a href="#ch14-hero"><b>14</b></a><a href="#ch15-hero"><b>15</b></a><a href="#ch16-hero"><b>16</b></a><a href="#ch17-hero"><b>17</b></a><a href="#ch18-hero"><b>18</b></a><a href="#ch19-hero"><b>19</b></a><a href="#ch20-hero"><b>20</b></a><a href="#ch21-hero" class="active"><b>21</b></a></span></div>
 
   <div class="hero" id="ch21-hero">
     <div class="eyebrow">Chapter Twenty-One</div>
