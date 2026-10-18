@@ -97,12 +97,23 @@
     border-bottom:1px solid var(--line);
   }
   .series-bar b{ color:var(--ink-soft); font-weight:500; }
-  .series-nav{ display:flex; align-items:center; gap:2px; flex-wrap:wrap; row-gap:6px; }
+  .series-nav{
+    display:flex;
+    align-items:center;
+    gap:2px;
+    flex-wrap:wrap;
+    row-gap:6px;
+    font-family:"JetBrains Mono", monospace;
+    font-size:11px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
   .series-nav a{
     color:var(--ink-faint);
     text-decoration:none;
-    padding:2px 5px;
+    padding:2px 3.5px;
     border:1px solid transparent;
+    white-space:nowrap;
   }
   .series-nav a:hover{ border-color:var(--line); color:var(--ink-soft); }
   .series-nav a.active b{ color:var(--accent-native); }
@@ -111,6 +122,10 @@
   /* ---------- per-chapter nav ---------- */
   .chapter-nav{
     padding:28px 0 0;
+    font-family:"JetBrains Mono", monospace;
+    font-size:11px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
   }
   .chapter-nav .series-nav{ justify-content:center; }
 
@@ -726,7 +741,6 @@
 
   <section class="toc-section" id="toc">
     <div class="hero">
-      <div class="eyebrow">Overview</div>
       <h1>Table of Contents</h1>
     </div>
 
